@@ -5,7 +5,7 @@
       <todo-input :item="todoText" @input="updateTodoText" @add="addTodoItem" />
       <div>
         <ul>
-          <todo-list-item />
+          <todo-list-item v-for="(todoItem, index) in todoItems" :key="index" :todoItem="todoItem" />
         </ul>
       </div>
     </main>
