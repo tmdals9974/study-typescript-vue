@@ -11,10 +11,7 @@ import Vue from "vue";
 
 export default Vue.extend({
   props: {
-    item: {
-      type: String,
-      required: true,
-    },
+    item: String,
   },
   methods: {
     addTodo() {
