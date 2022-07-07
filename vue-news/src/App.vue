@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <spinner :loading="loading"></spinner>
+    <loading-spinner :loading="loading"></loading-spinner>
     <tool-bar></tool-bar>
     <transition name="routing-fade" mode="out-in">
       <router-view></router-view>
@@ -8,20 +8,21 @@
   </div>
 </template>
 
-<script>
-import ToolBar from './components/ToolBar.vue';
-import Spinner from './components/Spinner.vue';
-import bus from './utils/bus.js';
+<script lang="ts">
+import Vue from "vue";
+import ToolBar from "./components/ToolBar.vue";
+import LoadingSpinner from "./components/LoadingSpinner.vue";
+import bus from "./utils/bus.js";
 
-export default {
+export default Vue.extend({
   components: {
     ToolBar,
-    Spinner,
+    LoadingSpinner,
   },
   data() {
     return {
       loading: false,
-    }
+    };
   },
   methods: {
     onProgress() {
@@ -29,13 +30,13 @@ export default {
     },
     offProgress() {
       this.loading = false;
-    }
+    },
   },
   created() {
-    bus.$on('on:progress', this.onProgress);
-    bus.$on('off:progress', this.offProgress);
-  }
-}
+    bus.$on("on:progress", this.onProgress);
+    bus.$on("off:progress", this.offProgress);
+  },
+});
 </script>
 
 <style>
@@ -56,8 +57,9 @@ a.router-link-active {
 }
 
 /* Router Transition */
-.routing-fade-enter-active, .routing-fade-leave-active {
-  transition: opacity .3s ease;
+.routing-fade-enter-active,
+.routing-fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 .routing-fade-enter, .routing-fade-leave-to
 /* .routing-fade-leave-active below version 2.1.8 */ {
