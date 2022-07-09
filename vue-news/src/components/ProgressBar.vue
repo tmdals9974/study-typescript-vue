@@ -105,12 +105,7 @@ export default {
     transform: scaleX(0.57);
   }
   44.15% {
-    animation-timing-function: cubic-bezier(
-      0.25776,
-      -0.00316,
-      0.21176,
-      1.38179
-    );
+    animation-timing-function: cubic-bezier(0.25776, -0.00316, 0.21176, 1.38179);
     transform: scaleX(0.91);
   }
   100% {

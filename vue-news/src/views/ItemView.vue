@@ -30,14 +30,7 @@ export default {
     bus.$emit("off:progress");
   },
   computed: {
-    ...mapGetters([
-      "fetchedItem",
-      "userName",
-      "userTimeAgo",
-      "userQuestion",
-      "userContent",
-      "contentPoints",
-    ]),
+    ...mapGetters(["fetchedItem", "userName", "userTimeAgo", "userQuestion", "userContent", "contentPoints"]),
   },
 };
 </script>

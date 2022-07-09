@@ -5,9 +5,7 @@
     </div>
     <div class="user-description">
       <slot name="userName"></slot>
-      <router-link :to="'/user/' + userInfo.user">{{
-        userInfo.user
-      }}</router-link>
+      <router-link :to="'/user/' + userInfo.user">{{ userInfo.user }}</router-link>
       <div class="time">
         {{ userInfo.time_ago || "Joined " + userInfo.created + "," }}
         <span v-if="userInfo.points">, {{ userInfo.points }} points</span>

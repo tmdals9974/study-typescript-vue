@@ -59,7 +59,7 @@ export default new VueRouter({
         store
           .dispatch("FETCH_ITEM", itemId)
           .then(() => next())
-          .catch((err) => new Error("failed to fetch item details", err));
+          .catch(err => new Error("failed to fetch item details", err));
       },
     },
     {
@@ -71,7 +71,7 @@ export default new VueRouter({
         store
           .dispatch("FETCH_USER", itemId)
           .then(() => next())
-          .catch((err) => new Error("failed to fetch user profile", err));
+          .catch(err => new Error("failed to fetch user profile", err));
       },
     },
   ],
