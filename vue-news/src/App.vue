@@ -12,7 +12,7 @@
 import Vue from "vue";
 import ToolBar from "./components/ToolBar.vue";
 import LoadingSpinner from "./components/LoadingSpinner.vue";
-import bus from "./utils/bus.js";
+import bus from "./utils/bus";
 
 export default Vue.extend({
   components: {
