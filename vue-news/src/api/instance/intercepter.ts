@@ -1,9 +1,11 @@
+import { AxiosInstance } from "axios";
 import store from "../../store";
 
-function setRequestOptions(instance) {
+function setRequestOptions(instance: AxiosInstance) {
   instance.interceptors.request.use(
     config => {
       const token = store.getters["auth/token"];
+      if (!config.headers) throw "no headers";
       config.headers.Authorization = token;
       return config;
     },
@@ -15,7 +17,7 @@ function setRequestOptions(instance) {
   );
 }
 
-function setResponseOptions(instance) {
+function setResponseOptions(instance: AxiosInstance) {
   instance.interceptors.response.use(
     config => {
       const token = config.headers.authorization;
