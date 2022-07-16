@@ -5,12 +5,14 @@ import Vuex, { StoreOptions } from "vuex";
 // import actions from "./actions.js";
 import { RootState, state } from "./store";
 import { mutations } from "./mutations";
+import { actions } from "./actions";
 
 Vue.use(Vuex);
 
 const store: StoreOptions<RootState> = {
   state: state,
   mutations: mutations,
+  actions: actions,
 };
 
 export default new Vuex.Store(store);
