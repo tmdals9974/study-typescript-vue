@@ -13,8 +13,6 @@ import Vue from "vue";
 import ToolBar from "./components/ToolBar.vue";
 import LoadingSpinner from "./components/LoadingSpinner.vue";
 import bus from "./utils/bus";
-import { MutationTypes } from "./store/mutations";
-import { ActionTypes } from "./store/actions";
 
 export default Vue.extend({
   components: {
