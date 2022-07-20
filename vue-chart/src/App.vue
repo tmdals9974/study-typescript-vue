@@ -10,9 +10,7 @@ import Chart from "chart.js";
 
 export default Vue.extend({
   mounted() {
-    const ctx = (
-      document.getElementById("myChart") as HTMLCanvasElement
-    ).getContext("2d");
+    const ctx = (document.getElementById("myChart") as HTMLCanvasElement).getContext("2d");
     const myChart = new Chart(ctx, {
       type: "bar",
       data: {
