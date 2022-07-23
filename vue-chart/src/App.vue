@@ -6,12 +6,15 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Chart from "chart.js";
+import { Chart } from "chart.js";
 
 export default Vue.extend({
   mounted() {
-    const ctx = (document.getElementById("myChart") as HTMLCanvasElement).getContext("2d");
-    const myChart = new Chart(ctx, {
+    const canvasElement = document.getElementById("myChart") as HTMLCanvasElement;
+    const ctx = canvasElement.getContext("2d");
+    if (!ctx) return;
+
+    const chart = new Chart(ctx, {
       type: "bar",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
