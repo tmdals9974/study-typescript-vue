@@ -1,27 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div></div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: "App",
-  components: {
-    HelloWorld,
+  // setup은 mixins와 hoc의 문제점을 개선하기 위해 나옴
+  // 굳이 사용하지않아도 기존처럼 쓸 수 있음.
+  setup() {
+    const str1 = ref("");
+    str1.value = "hi";
+    return { str1 };
+  },
+  data() {
+    return {
+      str2: "",
+    };
+  },
+  methods: {
+    changeString() {
+      this.str2 = "hi";
+    },
   },
 });
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style scoped></style>
